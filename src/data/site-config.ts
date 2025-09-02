@@ -142,7 +142,7 @@ Estoy aprendiendo a diseñar software a la medida, considerando la ética y la c
     actions: [
         {
             text: 'Get in Touch',
-            href: '/contact'
+            href: 'https://github.com/ManuelYanceyan/New-era/blob/main/README%20G1%20.md'
         }
     ]
 },
