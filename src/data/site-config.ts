@@ -40,8 +40,8 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
+    title: 'Manuel Quincho Ayala',
+    subtitle: 'Este es mi portafoilio para reporte de aprendisaje de clases de DESARROLLO DE APLICACIONES WEB',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
@@ -61,8 +61,8 @@ const siteConfig: SiteConfig = {
             href: '/blog'
         },
         {
-            text: 'Tags',
-            href: '/tags'
+            text: 'Github',
+            href: 'https://github.com/ManuelYanceyan'
         }
     ],
     footerNavLinks: [
@@ -77,16 +77,12 @@ const siteConfig: SiteConfig = {
         {
             text: 'Terms',
             href: '/terms'
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
         }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'Linkedin',
+            href: 'www.linkedin.com/in/manuel-yanceyan-quincho-ayala-a092a3235'
         },
         {
             text: 'Instagram',
@@ -98,10 +94,10 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
+        title: 'Blog de aprendizaje Del curso de DESARROLLO DE APLICACIONES WEB',
         text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
         image: {
-            src: '/hero.jpeg',
+            src: 'https://www.todopapas.com/images/cms_2011/tpp/semanas/sem01.gif',
             alt: 'A person sitting at a desk in front of a computer'
         },
         actions: [
