@@ -1,49 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Accordion from "../components/Accordion";
+import { getCollection } from "astro:content";
+import { marked } from "marked"; // Para convertir markdown en HTML
 
-const semanas = await getCollection('semanas');
+// Leemos todos los archivos de src/semanas/
+const semanas = await getCollection("semanas");
+
+// Ordenamos por número de semana
+const sortedSemanas = semanas.sort((a, b) => a.data.week - b.data.week);
+
+// Preparamos items para el acordeón
+const items = sortedSemanas.map((semana) => ({
+  title: semana.data.title,
+  content: marked.parse(semana.body), // Convertimos markdown a HTML
+}));
 ---
 
-<Layout title="Reporte Semanal - Desarrollo de Aplicaciones Web">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6">Reporte Semanal - Desarrollo de Aplicaciones Web</h1>
-
-    <div class="space-y-4">
-      {semanas.map((semana) => (
-        <div key={semana.slug} class="border rounded-lg overflow-hidden">
-          <button 
-            class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 transition flex justify-between items-center"
-            onclick="toggleAccordion(this)"
-          >
-            <span class="font-semibold">{semana.data.title}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="hidden p-4 bg-white prose max-w-none">
-            <p><em>{semana.data.date}</em></p>
-            <div class="mt-2">
-              {semana.body}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <script>
-    function toggleAccordion(button) {
-      const content = button.nextElementSibling;
-      content.classList.toggle('hidden');
-      
-      // Rotar el ícono
-      const icon = button.querySelector('svg');
-      if (content.classList.contains('hidden')) {
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        icon.style.transform = 'rotate(180deg)';
-      }
-    }
-  </script>
-</Layout>
+<div class="py-10">
+  <h1 class="text-3xl font-bold mb-6 text-center">
+    Reporte de Aprendizaje por Semanas
+  </h1>
+  <Accordion items={items} />
+</div>
