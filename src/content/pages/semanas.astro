@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const semanas = await getCollection('semanas');
+---
+
+<Layout title="Reporte Semanal - Desarrollo de Aplicaciones Web">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Reporte Semanal - Desarrollo de Aplicaciones Web</h1>
+
+    <div class="space-y-4">
+      {semanas.map((semana) => (
+        <div key={semana.slug} class="border rounded-lg overflow-hidden">
+          <button 
+            class="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 transition flex justify-between items-center"
+            onclick="toggleAccordion(this)"
+          >
+            <span class="font-semibold">{semana.data.title}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 bg-white prose max-w-none">
+            <p><em>{semana.data.date}</em></p>
+            <div class="mt-2">
+              {semana.body}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      content.classList.toggle('hidden');
+      
+      // Rotar el ícono
+      const icon = button.querySelector('svg');
+      if (content.classList.contains('hidden')) {
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+</Layout>
