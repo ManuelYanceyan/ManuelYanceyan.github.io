@@ -40,7 +40,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
-    title: 'Manuel Yanceyan Quincho Ayala',
+    title: 'El blog de Manuel Yanceyan Quincho Ayala',
     subtitle: 'Este es mi portafoilio para reporte de aprendisaje de clases de DESARROLLO DE APLICACIONES WEB',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
     image: {
