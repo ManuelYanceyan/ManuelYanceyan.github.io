@@ -1,0 +1,34 @@
+---
+// src/pages/semanas/[slug].astro
+import { getEntry } from "astro:content";
+
+const { slug } = Astro.params;
+const semana = await getEntry("semanas", slug);
+
+if (!semana) {
+  return new Response(null, { status: 404 });
+}
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{semana.data.title}</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    h1 { color: #1e40af; }
+    a { color: #1d4ed8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <a href="/semanas">← Volver a todas las semanas</a>
+  <article>
+    <h1>{semana.data.title}</h1>
+    <p><em>Semana {semana.data.week}</em></p>
+    <Content content={semana.body} />
+  </article>
+</body>
+</html>

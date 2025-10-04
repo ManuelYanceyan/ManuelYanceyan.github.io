@@ -1,0 +1,41 @@
+---
+// src/pages/semanas/index.astro
+import { getCollection } from "astro:content";
+
+const semanas = (await getCollection("semanas"))
+  .sort((a, b) => a.data.week - b.data.week);
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semanas - Reporte de Aprendizaje</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    h1 { color: #1e40af; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 1rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 6px; }
+    a { text-decoration: none; color: #1d4ed8; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>📋 Reporte Semanal de Aprendizaje</h1>
+  {semanas.length > 0 ? (
+    <ul>
+      {semanas.map((item) => (
+        <li key={item.id}>
+          <a href={`/semanas/${item.slug}`}>
+            {item.data.title} (Semana {item.data.week})
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No hay semanas registradas aún.</p>
+  )}
+  <p><a href="/">← Volver al inicio</a></p>
+</body>
+</html>
