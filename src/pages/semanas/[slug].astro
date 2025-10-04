@@ -8,6 +8,14 @@ const semana = await getEntry("semanas", slug);
 if (!semana) {
   return new Response(null, { status: 404 });
 }
+
+// ✅ NUEVO: getStaticPaths para rutas dinámicas
+export async function getStaticPaths() {
+  const semanas = await getCollection("semanas");
+  return semanas.map((item) => ({
+    params: { slug: item.slug },
+  }));
+}
 ---
 
 <!DOCTYPE html>
@@ -27,7 +35,7 @@ if (!semana) {
   <a href="/semanas">← Volver a todas las semanas</a>
   <article>
     <h1>{semana.data.title}</h1>
-    <p><em>Semana {semana.data.week}</em></p>
+    <p><em>Semana {semana.data.week} — {semana.data.date}</em></p>
     <Content content={semana.body} />
   </article>
 </body>
