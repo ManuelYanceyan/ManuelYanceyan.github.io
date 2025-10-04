@@ -1,6 +1,6 @@
 ---
 // src/pages/semanas/[slug].astro
-import { getEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 
 const { slug } = Astro.params;
 const semana = await getEntry("semanas", slug);
