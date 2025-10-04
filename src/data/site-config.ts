@@ -41,30 +41,30 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
     title: 'El blog de Manuel Yanceyan Quincho',
-    subtitle: 'Este es mi portafolio para reporte de aprendizaje de clases de DESARROLLO DE APLICACIONES WEB',
+    subtitle: 'Este es mi portafoilio para reporte de aprendisaje de clases de DESARROLLO DE APLICACIONES WEB',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
     },
     headerNavLinks: [
-        {
-            text: 'Home',
-            href: '/'
-        },
-        {
-            text: 'Proyectos',
-            href: '/projects'
-        },
-        {
-            text: 'Semanas',
-            href: '/semanas'
-        },
-        {
-            text: 'Github',
-            href: 'https://github.com/ManuelYanceyan'
-        }
-    ],
+    {
+        text: 'Home',
+        href: '/'
+    },
+    {
+        text: 'Proyectos',
+        href: '/projects'
+    },
+    {
+        text: 'Semanas',
+        href: '/semanas' // <-- Nuevo enlace
+    },
+    {
+        text: 'Github',
+        href: 'https://github.com/ManuelYanceyan'
+    }
+],
     footerNavLinks: [
         {
             text: 'About',
@@ -82,7 +82,7 @@ const siteConfig: SiteConfig = {
     socialLinks: [
         {
             text: 'Linkedin',
-            href: 'https://www.linkedin.com/in/manuel-yanceyan-quincho-ayala-a092a3235'
+            href: 'www.linkedin.com/in/manuel-yanceyan-quincho-ayala-a092a3235'
         },
         {
             text: 'Instagram',
@@ -93,20 +93,21 @@ const siteConfig: SiteConfig = {
             href: 'https://twitter.com/'
         }
     ],
-    hero: {
-        title: 'Blog de aprendizaje - Curso de DESARROLLO DE APLICACIONES WEB',
-        text: 'Haz clic en "Semanas" para ver el reporte detallado por semana.',
-        image: {
-            src: 'https://www.todopapas.com/images/cms_2011/tpp/semanas/sem01.gif',
-            alt: 'Estudiante frente a una computadora'
-        },
-        actions: [
-            {
-                text: 'Ver Semanas',
-                href: '/semanas'
-            }
-        ]
+  hero: {
+    title: 'Blog de aprendizaje - Curso de DESARROLLO DE APLICACIONES WEB',
+    text: 'Haz clic en "Semanas" para ver el reporte detallado por semana.',
+    image: {
+        src: 'https://www.todopapas.com/images/cms_2011/tpp/semanas/sem01.gif',
+        alt: 'Estudiante frente a una computadora'
     },
+    actions: [
+        {
+            text: 'Ver Semanas',
+            href: '/semanas'
+        }
+    ]
+},
+
     subscribe: {
         title: 'Subscribe to Dante Newsletter',
         text: 'One update per week. All the latest posts directly in your inbox.',
