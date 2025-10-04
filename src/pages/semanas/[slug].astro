@@ -1,20 +1,19 @@
 ---
 // src/pages/semanas/[slug].astro
-import { getEntry, getCollection } from "astro:content";
+import { getEntry, getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const semanas = await getCollection('semanas');
+  return semanas.map((semana) => ({
+    params: { slug: semana.slug },
+  }));
+}
 
 const { slug } = Astro.params;
-const semana = await getEntry("semanas", slug);
+const semana = await getEntry('semanas', slug);
 
 if (!semana) {
   return new Response(null, { status: 404 });
-}
-
-// ✅ CORREGIDO: getStaticPaths para rutas dinámicas
-export async function getStaticPaths() {
-  const semanas = await getCollection("semanas");
-  return semanas.map((item) => ({
-    params: { slug: item.slug }, // ✅ Asegúrate de que `slug` sea una cadena
-  }));
 }
 ---
 
@@ -35,7 +34,7 @@ export async function getStaticPaths() {
   <a href="/semanas">← Volver a todas las semanas</a>
   <article>
     <h1>{semana.data.title}</h1>
-    <p><em>Semana {semana.data.week} — {semana.data.date}</em></p>
+    <p><em>Semana {semana.data.week}</em></p>
     <Content content={semana.body} />
   </article>
 </body>
