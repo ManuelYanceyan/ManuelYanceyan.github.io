@@ -9,11 +9,11 @@ if (!semana) {
   return new Response(null, { status: 404 });
 }
 
-// ✅ NUEVO: getStaticPaths para rutas dinámicas
+// ✅ CORREGIDO: getStaticPaths para rutas dinámicas
 export async function getStaticPaths() {
   const semanas = await getCollection("semanas");
   return semanas.map((item) => ({
-    params: { slug: item.slug },
+    params: { slug: item.slug }, // ✅ Asegúrate de que `slug` sea una cadena
   }));
 }
 ---
