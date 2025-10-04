@@ -4,7 +4,7 @@ week: 1
 date: "2025-04-01"
 ---
 
-# SEMANA 01
+# SEMANA 0101
 
 ## Resumen
 
