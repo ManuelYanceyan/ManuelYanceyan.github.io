@@ -1,5 +1,6 @@
 ---
 title: "Semana 01 - Introducción al Desarrollo Web"
+week: 1
 date: "2025-04-01"
 ---
 

@@ -1,6 +1,7 @@
 ---
-title: "Semana 02 - Fundamentos de HTML y CSS"
-date: "2025-04-08"
+title: "Semana 022 - Introducción al Desarrollo Web"
+week: 2
+date: "2025-04-01"
 ---
 
 🎯 **Temas vistos esta semana:**
