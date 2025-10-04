@@ -4,7 +4,7 @@ week: 1
 date: "2025-04-01"
 ---
 
-🚀 **Curso Desarrollo de Aplicaciones Web**
+🚀 **Curso Desarrollo de Aplicaciones Web 2025-II**
 
 Estoy iniciando este curso para aprender a crear software funcional y seguro, trabajando tanto en Frontend como en Backend. ✨
 
