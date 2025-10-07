@@ -1,3 +1,5 @@
+/* Ya tienes tus importaciones y configuración de tema aquí */
+
 @import '@fontsource-variable/inter' layer(base);
 @import '@fontsource-variable/newsreader' layer(base);
 @import '@fontsource-variable/newsreader/wght-italic.css' layer(base);
@@ -5,8 +7,10 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+/* Aquí va la configuración de tu tema oscuro */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Definición de colores */
 :root {
     --text-main: #171717;
     --bg-main: #f2f1ec;
@@ -20,38 +24,7 @@ html.dark {
     --border-main: #f2f1ec;
 }
 
-/* Cyan */
-/*
-:root {
-    --text-main: #162a2b;
-    --bg-main: #d6e0e2;
-    --bg-muted: #ccd8db;
-    --border-main: #162a2b;
-}
-html.dark {
-    --text-main: #d6e0e2;
-    --bg-main: #162a2b;
-    --bg-muted: #1c3537;
-    --border-main: #d6e0e2;
-}
-*/
-
-/* Green */
-/*
-:root {
-    --text-main: #3a4238;
-    --bg-main: #f3efe6;
-    --bg-muted: #eee9dc;
-    --border-main: #3a4238;
-}
-html.dark {
-    --text-main: #f3efe6;
-    --bg-main: #5e6c5b;
-    --bg-muted: #596756;
-    --border-main: #f3efe6;
-}
-*/
-
+/* Definición de fuentes */
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
     --font-serif: 'Newsreader Variable', serif;
@@ -61,6 +34,7 @@ html.dark {
     --border-color-main: var(--border-main);
 }
 
+/* Estilos para la clase 'prose' que ya tienes configurada */
 @layer utilities {
     .prose {
         --tw-prose-body: var(--text-color-main);
@@ -95,4 +69,43 @@ html.dark {
     .prose blockquote {
         @apply font-serif font-normal italic border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
     }
+}
+
+/* Agregar los estilos específicos para las semanas */
+#semanas {
+    background-color: var(--bg-muted);
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.week-content {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.week-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+.week-content p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.week-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.week-content li {
+    margin: 5px 0;
+}
+
+.week-content h4 {
+    font-size: 1.125rem;
+    color: var(--text-main);
 }

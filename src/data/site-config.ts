@@ -22,6 +22,13 @@ export type Subscribe = {
     formUrl: string;
 };
 
+export type WeekContent = {
+    title: string;
+    summary: string;
+    keyConcepts: string[];
+    lab: string;
+};
+
 export type SiteConfig = {
     website: string;
     logo?: Image;
@@ -36,6 +43,7 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
+    weeks: WeekContent[]; // Este es el array donde agregamos las semanas
 };
 
 const siteConfig: SiteConfig = {
@@ -58,7 +66,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'Semanas',
-            href: '/semanas'
+            href: '#semanas'  // Enlaza dentro de la misma página
         },
         {
             text: 'Github',
@@ -103,7 +111,7 @@ const siteConfig: SiteConfig = {
         actions: [
             {
                 text: 'Ver Semanas',
-                href: '/semanas'
+                href: '#semanas'
             }
         ]
     },
@@ -113,7 +121,66 @@ const siteConfig: SiteConfig = {
         formUrl: '#'
     },
     postsPerPage: 8,
-    projectsPerPage: 8
+    projectsPerPage: 8,
+
+    // Definir el contenido de las semanas aquí
+    weeks: [
+        {
+            title: "Semana 1: Fundamentos de Desarrollo Web",
+            summary: "El enfoque sistémico es fundamental para determinar las características de los sistemas de líneas...",
+            keyConcepts: [
+                "El desarrollo de software debe contribuir al proceso de toma de decisiones...",
+                "La competencia en el área incluye desarrollar software según los requerimientos específicos del cliente..."
+            ],
+            lab: "Laboratorio 1: Introducción a HTML y CSS."
+        },
+        {
+            title: "Semana 2: Estructura del Curso",
+            summary: "El curso está dividido en dos partes principales: Frontend y Backend...",
+            keyConcepts: [
+                "Frontend: desarrollo de aplicaciones web con HTML, CSS y JavaScript...",
+                "Backend: desarrollo de aplicaciones con Node.js y bases de datos..."
+            ],
+            lab: "Laboratorio 2: Diseño con Flexbox y CSS Responsivo."
+        },
+        {
+            title: "Semana 3: Introducción a JavaScript",
+            summary: "La semana 3 está dedicada a aprender los fundamentos de JavaScript...",
+            keyConcepts: [
+                "Variables y tipos de datos en JavaScript...",
+                "Estructuras de control (condicionales, loops)..."
+            ],
+            lab: "Laboratorio 3: Introducción a la sintaxis de JavaScript y ejecución de scripts simples."
+        },
+        {
+            title: "Semana 4: DOM y Eventos en JavaScript",
+            summary: "La manipulación del DOM (Document Object Model) es una habilidad clave para desarrollar aplicaciones web dinámicas.",
+            keyConcepts: [
+                "Cómo interactuar con el DOM utilizando JavaScript...",
+                "Manejo de eventos como clics, teclas y otros eventos del navegador..."
+            ],
+            lab: "Laboratorio 4: Creación de una página web interactiva usando el DOM y eventos en JavaScript."
+        },
+        {
+            title: "Semana 5: Introducción a React",
+            summary: "React es una librería para la construcción de interfaces de usuario interactivas.",
+            keyConcepts: [
+                "Componentes, props y estado en React...",
+                "Renderizado condicional y manejo de eventos en React..."
+            ],
+            lab: "Laboratorio 5: Creación de un componente funcional básico en React."
+        },
+        {
+            title: "Semana 6: Uso de APIs y Fetch en JavaScript",
+            summary: "En esta semana, aprendemos a interactuar con APIs utilizando Fetch y otros métodos.",
+            keyConcepts: [
+                "Consumo de APIs REST usando Fetch...",
+                "Manejo de promesas y async/await..."
+            ],
+            lab: "Laboratorio 6: Conexión con una API pública y visualización de datos en una interfaz React."
+        },
+        // Continúa agregando las semanas restantes hasta la semana 16
+    ]
 };
 
 export default siteConfig;
