@@ -48,7 +48,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
-    title: 'El blog de Manuel Yanceyan Quincho',
+    title: 'Bienvenido a mi portafolio',
     subtitle: 'Este es mi portafolio para reporte de aprendizaje de clases de DESARROLLO DE APLICACIONES WEB',
     description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
     image: {
@@ -66,7 +66,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'Semanas',
-            href: '#semanas'  // Enlaza dentro de la misma página
+            href: '/semanas'  // Enlaza dentro de la misma página
         },
         {
             text: 'Github',

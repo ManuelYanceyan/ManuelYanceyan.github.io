@@ -1,41 +1,49 @@
 ---
-// src/pages/semanas/index.astro
-import { getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import ProjectPreview from '../../components/ProjectPreview.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
 
-const semanas = (await getCollection("semanas"))
-  .sort((a, b) => a.data.week - b.data.week);
+export async function getStaticPaths() {
+    const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+    const projectCount = projects.length;
+    return projects.map((project, index) => ({
+        params: { id: project.id },
+        props: {
+            project,
+            prevProject: index + 1 !== projectCount ? projects[index + 1] : null,
+            nextProject: index !== 0 ? projects[index - 1] : null
+        }
+    }));
+}
+
+type Props = {
+    project: CollectionEntry<'projects'>;
+    prevProject: CollectionEntry<'projects'>;
+    nextProject: CollectionEntry<'projects'>;
+};
+
+const { project, prevProject, nextProject } = Astro.props;
+const { title, description, seo } = project.data;
+const { Content } = await render(project);
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semanas - Reporte de Aprendizaje</title>
-  <style>
-    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
-    h1 { color: #1e40af; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 1rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 6px; }
-    a { text-decoration: none; color: #1d4ed8; font-weight: bold; }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <h1>📋 Reporte Semanal de Aprendizaje</h1>
-  {semanas.length > 0 ? (
-    <ul>
-      {semanas.map((item) => (
-        <li key={item.id}>
-          <a href={`/semanas/${item.slug}`}>
-            {item.data.title} (Semana {item.data.week})
-          </a>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No hay semanas registradas aún.</p>
-  )}
-  <p><a href="/">← Volver al inicio</a></p>
-</body>
-</html>
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8">
+            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+        </header>
+        <div class="max-w-none prose sm:prose-lg">
+            <Content />
+        </div>
+    </article>
+    {
+        (prevProject || nextProject) && (
+            <div class="my-16 sm:my-24">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">View Next</h2>
+                {nextProject && <ProjectPreview project={nextProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {prevProject && <ProjectPreview project={prevProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </div>
+        )
+    }
+</BaseLayout>
