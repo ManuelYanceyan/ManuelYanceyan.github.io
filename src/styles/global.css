@@ -1,13 +1,19 @@
-/* Ya tienes tus importaciones y configuración de tema aquí */
-
+/* === 1. IMPORTS (deben ir primero) === */
 @import '@fontsource-variable/inter' layer(base);
 @import '@fontsource-variable/newsreader' layer(base);
 @import '@fontsource-variable/newsreader/wght-italic.css' layer(base);
 
-@import 'tailwindcss';
+/* === 2. DIRECTIVAS DE TAILWIND === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 3. PLUGINS === */
 @plugin '@tailwindcss/typography';
 
-/* Aquí va la configuración de tu tema oscuro */
+/* === 4. TU CÓDIGO PERSONALIZADO === */
+
+/* Tema oscuro */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Definición de colores */
@@ -17,6 +23,7 @@
     --bg-muted: #eae9e1;
     --border-main: #171717;
 }
+
 html.dark {
     --text-main: #f2f1ec;
     --bg-main: #171717;
@@ -24,7 +31,7 @@ html.dark {
     --border-main: #f2f1ec;
 }
 
-/* Definición de fuentes */
+/* Definición de fuentes y variables globales */
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
     --font-serif: 'Newsreader Variable', serif;
@@ -34,7 +41,7 @@ html.dark {
     --border-color-main: var(--border-main);
 }
 
-/* Estilos para la clase 'prose' que ya tienes configurada */
+/* === ESTILOS DE TYPOGRAFÍA (.prose) === */
 @layer utilities {
     .prose {
         --tw-prose-body: var(--text-color-main);
@@ -71,7 +78,7 @@ html.dark {
     }
 }
 
-/* Agregar los estilos específicos para las semanas */
+/* === ESTILOS PERSONALIZADOS PARA LAS SEMANAS === */
 #semanas {
     background-color: var(--bg-muted);
     padding: 40px 20px;

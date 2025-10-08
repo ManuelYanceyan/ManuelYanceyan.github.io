@@ -1,14 +1,17 @@
+import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'astro/config';
-import siteConfig from './src/data/site-config';
+import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
-export default defineConfig({
+// Configuración del sitio
+    export default defineConfig({
     site: 'https://ManuelYanceyan.github.io',
-    vite: {
-        plugins: [tailwindcss()]
-    },
-    integrations: [mdx(), sitemap()]
+    integrations: [
+        tailwind({
+        // Puedes activar el modo 'applyBaseStyles' si usas tipografía personalizada
+        applyBaseStyles: true,
+        }),
+        mdx(),
+        sitemap(),
+    ],
 });
