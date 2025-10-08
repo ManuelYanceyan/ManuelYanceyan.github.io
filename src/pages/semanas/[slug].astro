@@ -1,30 +1,38 @@
 ---
-import type { GetStaticPathsOptions, Page } from 'astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Pagination from '../../components/Pagination.astro';
-import ProjectPreview from '../../components/ProjectPreview.astro';
-import siteConfig from '../../data/site-config';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
+import { paginate } from 'astro:pagination';
+import { siteConfig } from '../../data/site-config';
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-    return paginate(projects, { pageSize: siteConfig.projectsPerPage || 6 });
-}
-
-type Props = { page: Page<CollectionEntry<'projects'>> };
-
-const { page } = Astro.props;
-const portfolio = page.data;
+const { page } = await paginate(siteConfig.weeks, {
+    pageSize: 5, // Número de semanas por página
+});
 ---
 
-<BaseLayout
-    title="Portfolio"
-    description="Explore a diverse portfolio showcasing my passion and expertise"
-    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
-    showHeader={false}
->
-    <h1 class="mb-12 text-2xl leading-tight font-serif italic sm:mb-16 sm:text-4xl">Projects</h1>
-    {portfolio.map((project) => <ProjectPreview project={project} class="mb-10 sm:mb-12" />)}
-    <Pagination page={page} class="my-16 sm:my-24" />
-</BaseLayout>
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Reportes Semanales</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {page.data.map((week) => (
+            <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                <h2 class="text-xl font-semibold text-blue-700 mb-2">{week.title}</h2>
+                <p class="text-gray-700 mb-4">{week.summary}</p>
+                <h3 class="font-medium text-gray-800 mb-2">Conceptos Clave:</h3>
+                <ul class="list-disc list-inside mb-4 space-y-1">
+                    {week.keyConcepts.map((concept) => (
+                        <li class="text-sm text-gray-600">{concept}</li>
+                    ))}
+                </ul>
+                <h3 class="font-medium text-gray-800 mb-2">Laboratorio:</h3>
+                <p class="text-sm text-gray-600">{week.lab}</p>
+            </div>
+        ))}
+    </div>
+
+    <!-- Paginación -->
+    <div class="flex justify-center mt-8 space-x-4">
+        {page.prev && (
+            <a href={page.prev} class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">Anterior</a>
+        )}
+        {page.next && (
+            <a href={page.next} class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">Siguiente</a>
+        )}
+    </div>
+</div>
