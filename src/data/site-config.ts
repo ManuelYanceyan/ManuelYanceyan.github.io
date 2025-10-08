@@ -32,7 +32,7 @@ export type WeekContent = {
 export type SiteConfig = {
     website: string;
     logo?: Image;
-    title: string;
+    title?: string;
     subtitle?: string;
     description: string;
     image?: Image;
@@ -43,67 +43,33 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
-    weeks: WeekContent[]; // Este es el array donde agregamos las semanas
+    weeks: WeekContent[];
 };
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
-    title: 'Bienvenido a mi portafolio de manuel',
-    subtitle: 'Este es mi portafolio para reporte de aprendizaje de clases de DESARROLLO DE APLICACIONES WEB',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    description: 'Tema Astro.js y Tailwind CSS para blog y portafolio creado por justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
+        alt: 'Dante - Astro.js y Tailwind CSS theme'
     },
     headerNavLinks: [
-        {
-            text: 'Home',
-            href: '/'
-        },
-        {
-            text: 'Proyectos',
-            href: '/projects'
-        },
-        {
-            text: 'Semanas',
-            href: '/semanas'  // Enlaza dentro de la misma página
-        },
-        {
-            text: 'Github',
-            href: 'https://github.com/ManuelYanceyan'
-        }
+        { text: 'Inicio', href: '/' },
+        { text: 'Proyectos', href: '/projects' },
+        { text: 'Semanas', href: '/semanas' },
+        { text: 'Github', href: 'https://github.com/ManuelYanceyan' }
     ],
     footerNavLinks: [
-        {
-            text: 'About',
-            href: '/about'
-        },
-        {
-            text: 'Contact',
-            href: '/contact'
-        },
-        {
-            text: 'Terms',
-            href: '/terms'
-        }
+        { text: 'Sobre mi', href: '/about' },
+        { text: 'Contacto', href: '/contact' },
+        /* { text: 'Términos', href: '/terms' }*/
     ],
     socialLinks: [
-        {
-            text: 'Linkedin',
-            href: 'https://www.linkedin.com/in/manuel-yanceyan-quincho-ayala-a092a3235'
-        },
-        {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
-        },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
-        }
+        { text: 'Linkedin', href: 'https://www.linkedin.com/in/manuel-yanceyan-quincho-ayala-a092a3235' },
+        { text: 'Instagram', href: 'https://instagram.com/' },
+        { text: 'X/Twitter', href: 'https://twitter.com/' }
     ],
     hero: {
-        title: 'Blog de aprendizaje - Curso de DESARROLLO DE APLICACIONES WEB',
-        text: 'Haz clic en "Semanas" para ver el reporte detallado por semana.',
         image: {
             src: 'https://www.todopapas.com/images/cms_2011/tpp/semanas/sem01.gif',
             alt: 'Estudiante frente a una computadora'
@@ -116,14 +82,12 @@ const siteConfig: SiteConfig = {
         ]
     },
     subscribe: {
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
+        title: 'Suscríbete al boletín de Dante',
+        text: 'Una actualización por semana. Todas las últimas publicaciones directamente en tu correo.',
         formUrl: '#'
     },
     postsPerPage: 8,
     projectsPerPage: 8,
-
-    // Definir el contenido de las semanas aquí
     weeks: [
         {
             title: "Semana 1: Fundamentos de Desarrollo Web",
@@ -178,8 +142,7 @@ const siteConfig: SiteConfig = {
                 "Manejo de promesas y async/await..."
             ],
             lab: "Laboratorio 6: Conexión con una API pública y visualización de datos en una interfaz React."
-        },
-        // Continúa agregando las semanas restantes hasta la semana 16
+        }
     ]
 };
 
