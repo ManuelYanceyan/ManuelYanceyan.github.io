@@ -1,123 +1,27 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import siteConfig from '../data/site-config';
+
+const title = "Reportes Semanales";
 ---
 
-<style>
-    /* === Contenedor principal === */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        color: #e0e0e0;
-        font-family: 'Orbitron', sans-serif;
-        background-color: #0a0a0f;
-    }
-
-    h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        color: #00ffff;
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #9400ff;
-        letter-spacing: 2px;
-    }
-
-    /* === Tarjeta con efecto NEÓN gamer === */
-    .semana-card {
-        position: relative;
-        background: rgba(15, 15, 25, 0.9);
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 24px;
-        overflow: hidden;
-        box-shadow:
-            0 0 20px rgba(0, 255, 255, 0.2),
-            0 0 40px rgba(148, 0, 255, 0.1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    /* Borde animado tipo luces que circulan */
-    .semana-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        padding: 2px;
-        border-radius: 12px;
-        background: linear-gradient(120deg,
-            #00ffff, #9400ff, #00ffff, #9400ff);
-        background-size: 400% 400%;
-        animation: neonFlow 6s linear infinite;
-        -webkit-mask:
-            linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-                mask-composite: exclude;
-    }
-
-    @keyframes neonFlow {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    /* Hover con brillo extra */
-    .semana-card:hover {
-        transform: scale(1.03);
-        box-shadow:
-            0 0 30px rgba(0, 255, 255, 0.4),
-            0 0 60px rgba(148, 0, 255, 0.3);
-    }
-
-    /* === Tipografía y colores === */
-    .semana-title {
-        font-size: 1.7rem;
-        font-weight: bold;
-        color: #00ffff;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px #00ffff;
-    }
-
-    .semana-summary {
-        margin-bottom: 15px;
-        line-height: 1.6;
-        color: #cccccc;
-    }
-
-    .semana-concepts h3,
-    .semana-lab h3 {
-        color: #9400ff;
-        text-shadow: 0 0 8px #9400ff;
-    }
-
-    .semana-concepts li {
-        color: #e0e0e0;
-        margin: 4px 0;
-    }
-
-    .semana-lab {
-        font-weight: bold;
-        color: #00ffff;
-        text-shadow: 0 0 8px #00ffff;
-    }
-</style>
-
-<div class="container">
-    <h1>Reportes Semanales</h1>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        {siteConfig.weeks.map((week, index) => (
-            <div class="semana-card" key={index}>
-                <h2 class="semana-title">{week.title}</h2>
-                <p class="semana-summary">{week.summary}</p>
-
-                <h3>Conceptos Clave:</h3>
-                <ul class="semana-concepts">
-                    {week.keyConcepts.map((concept, i) => (
-                        <li key={i}>{concept}</li>
-                    ))}
-                </ul>
-
-                <h3>Laboratorio:</h3>
-                <p class="semana-lab">{week.lab}</p>
-            </div>
-        ))}
-    </div>
-</div>
+<BaseLayout title={title}>
+  <h1 class="text-center text-3xl font-bold mb-6 text-cyan-400">Reportes Semanales</h1>
+  
+  <div id="semanas" class="space-y-6">
+    {siteConfig.weeks.map((week, index) => (
+      <div class="semana-card bg-[#0a0a1a] border border-cyan-500 p-6 rounded-lg shadow-lg hover:shadow-cyan-500/40 transition-all duration-300">
+        <h2 class="text-xl font-semibold text-cyan-300 mb-2">{week.title}</h2>
+        <p class="text-gray-300 mb-4">{week.summary}</p>
+        <h3 class="text-cyan-400">Conceptos Clave:</h3>
+        <ul class="list-disc list-inside text-gray-200 mb-4">
+          {week.keyConcepts.map((concept) => (
+            <li>{concept}</li>
+          ))}
+        </ul>
+        <h3 class="text-cyan-400">Laboratorio:</h3>
+        <p class="text-gray-200 font-medium">{week.lab}</p>
+      </div>
+    ))}
+  </div>
+</BaseLayout>

@@ -1,73 +1,114 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import Hero from '../components/Hero.astro';
-import PostPreview from '../components/PostPreview.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
-import siteConfig from '../data/site-config';
-import { sortItemsByDateDesc } from '../utils/data-utils';
-
-const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
-const featuredPosts = posts.filter(({ data }) => data.isFeatured);
-
-const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-const featuredProjects = projects.filter(({ data }) => data.isFeatured);
+import Layout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
-    <Hero />
-    
-    <!-- Mostrar los proyectos destacados -->
-    {
-        featuredProjects?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Projects</h2>
-                {featuredProjects.map((project) => (
-                    <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/projects">View All Projects</Button>
-                </div>
-            </div>
-        )
-    }
-    
-    <!-- Mostrar las publicaciones destacadas -->
-    {
-        featuredPosts?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Writing</h2>
-                {featuredPosts.map((post) => (
-                    <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">View All Posts</Button>
-                </div>
-            </div>
-        )
-    }
+<style>
+  /* Fondo con animación neón */
+  body {
+    background: radial-gradient(circle at center, #050505 0%, #000010 100%);
+    color: #e0e0ff;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
 
-    <!-- Mostrar el contenido de las semanas -->
-    <section id="semanas" class="mb-24">
-        <h2 class="text-2xl sm:text-3xl font-serif italic mb-12">Reportes Semanales</h2>
+  /* Animación de borde de luces */
+  .neon-border {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    animation: neonPulse 4s linear infinite;
+    pointer-events: none;
+  }
 
-        {siteConfig.weeks.map((week, index) => (
-            <div class="week-content mb-16" key={index}>
-                <h3 class="text-xl sm:text-2xl font-bold">{week.title}</h3>
-                <p class="mt-4">{week.summary}</p>
-                
-                <h4 class="mt-6 text-lg">Conceptos Clave</h4>
-                <ul class="list-disc pl-6">
-                    {week.keyConcepts.map((concept, index) => (
-                        <li key={index}>{concept}</li>
-                    ))}
-                </ul>
+  @keyframes neonPulse {
+    0% { box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff; }
+    25% { box-shadow: 0 0 25px #00ff99, inset 0 0 25px #00ff99; }
+    50% { box-shadow: 0 0 25px #ff00ff, inset 0 0 25px #ff00ff; }
+    75% { box-shadow: 0 0 25px #ff0099, inset 0 0 25px #ff0099; }
+    100% { box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff; }
+  }
 
-                <h4 class="mt-6 text-lg">Laboratorio</h4>
-                <p>{week.lab}</p>
-            </div>
-        ))}
-    </section>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+  }
 
-</BaseLayout>
+  h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #b3b3ff;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .btn-neon {
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #00ffff;
+  }
+
+  .btn-neon:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+  }
+
+  .card {
+    background: rgba(20, 20, 40, 0.8);
+    border: 1px solid #00ffff33;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 0 20px #00ffff33;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 30px #00ffff99, 0 0 60px #00ffff55;
+    transform: scale(1.02);
+  }
+</style>
+
+<Layout>
+  <div class="neon-border"></div>
+
+  <div class="container">
+    <h1>🚀 Bienvenido al Portafolio de Manuel</h1>
+    <p>
+      Este es mi espacio digital de aprendizaje en desarrollo web, donde combino código, diseño y energía gamer 🔥
+    </p>
+
+    <a href="/semanas" class="btn-neon">Ver Semanas</a>
+
+    <div class="card">
+      <h2>💻 Proyectos Destacados</h2>
+      <p>Explora mis creaciones, laboratorios y reportes de aprendizaje.</p>
+      <a href="/projects" class="btn-neon">Ver projectos</a>
+    </div>
+  </div>
+</Layout>

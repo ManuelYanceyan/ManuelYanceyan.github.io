@@ -1,5 +1,4 @@
 ---
-
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
@@ -8,29 +7,82 @@ import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
 export type Props = HeadProps & { showHeader?: boolean };
-
 const { showHeader = true, ...head } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="antialiased break-words">
-    <head> <meta name="theme-color" content="#0f0f1b">
-        <BaseHead {...head} />
-        <script>
-            if (localStorage.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-        </script>
-        <ClientRouter />
-    </head>
-    <body class="bg-main text-main">
-        <div class="flex flex-col min-h-screen px-4 md:px-8">
-            <Nav />
-            {showHeader && <Header />}
-            <main class="grow w-full max-w-3xl mx-auto">
-                <slot />
-            </main>
-            <Footer />
-        </div>
-    </body>
+  <head>
+    <meta name="theme-color" content="#0f0f1b" />
+    <BaseHead {...head} />
+
+    <script>
+      if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+
+    <ClientRouter />
+
+    <!-- 🎮 ESTILO GAMER NEÓN GLOBAL -->
+    <style>
+      body {
+        background: radial-gradient(circle at center, #050505 0%, #000010 100%);
+        color: #e0e0ff;
+        font-family: 'Orbitron', sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .neon-border {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        pointer-events: none;
+        z-index: 50;
+        box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+        animation: neonFlow 6s linear infinite;
+      }
+
+      @keyframes neonFlow {
+        0% {
+          box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+          border: 2px solid #00ffff;
+        }
+        25% {
+          box-shadow: 0 0 20px #00ff99, inset 0 0 20px #00ff99;
+          border: 2px solid #00ff99;
+        }
+        50% {
+          box-shadow: 0 0 20px #ff00ff, inset 0 0 20px #ff00ff;
+          border: 2px solid #ff00ff;
+        }
+        75% {
+          box-shadow: 0 0 20px #ff0099, inset 0 0 20px #ff0099;
+          border: 2px solid #ff0099;
+        }
+        100% {
+          box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+          border: 2px solid #00ffff;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-main text-main relative">
+    <div class="neon-border"></div>
+
+    <div class="flex flex-col min-h-screen px-4 md:px-8 relative z-10">
+      <Nav />
+      {showHeader && <Header />}
+      <main class="grow w-full max-w-3xl mx-auto">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
