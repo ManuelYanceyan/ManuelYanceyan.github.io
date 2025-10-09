@@ -1,5 +1,5 @@
 ---
-title: 'Aplicativo Móvil para Preparación de Examen de Admisión'
+title: 'Poyectos a futuro Aplicativo Móvil para Preparación de Examen de Admisión'
 description: 'Este proyecto consiste en el desarrollo de una aplicación móvil para ayudar a los estudiantes a prepararse para su examen de admisión. El objetivo es ofrecer una plataforma accesible para aquellos que no pueden costear la matrícula en una academia de renombre, permitiéndoles estudiar de manera efectiva y asequible para ingresar a universidades de alto nivel.'
 publishDate: 'Oct 08 2025'
 seo:
