@@ -48,7 +48,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://ManuelYanceyan.github.io',
-    title: 'Mi Portafolio de Desarrollo Web',  // Asegúrate de que 'title' esté definido
+    title: '',  // Asegúrate de que 'title' esté definido
     description: 'Tema Astro.js y Tailwind CSS para blog y portafolio creado por justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
