@@ -1,66 +1,61 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: 'Exploración del Patrimonio Turístico y Cultural de Chupaca'
+description: 'Este proyecto consiste en el desarrollo de un sitio web para promover el turismo y el patrimonio cultural de la provincia de Chupaca. El proyecto ha sido realizado por un equipo de 7 integrantes y asesorado por Arturo Solís Flores, con fecha de entrega en el año 2025.'
+publishDate: 'Oct 08 2025'
 seo:
   image:
-    src: '/project-1.jpg'
-    alt: Project preview
+    src: '/project-chufaca.jpg.png'
+    alt: 'Exploración del Patrimonio Turístico y Cultural de Chupaca - Vista previa'
 ---
 
-![Project preview](/project-1.jpg)
+![Proyecto Chupaca]( /project-chufaca.jpg.png)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
 
-**Project Overview:**
-EcoBuddy is a revolutionary mobile application designed to make sustainable living accessible, engaging, and rewarding. With a focus on gamification and real-world impact, EcoBuddy encourages users to adopt eco-friendly habits, reduce their carbon footprint, and contribute to a healthier planet.
+**Descripción del Proyecto:**
 
-## Objectives
+Este proyecto se centra en el desarrollo de un sitio web para la promoción del patrimonio turístico y cultural de la provincia de Chupaca. Ha sido realizado en colaboración con 7 integrantes y bajo la supervisión de nuestro asesor Arturo Solís Flores. El objetivo es ofrecer una plataforma accesible y dinámica para que los usuarios puedan conocer la historia, los sitios turísticos y la cultura de la región.
 
-1. Develop a user-friendly mobile app that motivates individuals to adopt sustainable practices in their daily lives.
-2. Utilize gamification elements to make sustainable living fun and interactive.
-3. Provide educational resources and personalized challenges to empower users to make informed eco-conscious decisions.
+## Objetivos
 
-## Features
+1. Desarrollar un sitio web interactivo y visualmente atractivo para promover el turismo en la provincia de Chupaca.
+2. Crear contenido informativo sobre la historia, los sitios turísticos y las tradiciones de la región.
+3. Implementar una interfaz amigable que facilite la navegación y la exploración del patrimonio cultural de Chupaca.
 
-1. **EcoScore and Challenges:**
+## Características del Proyecto
 
-- Users are assigned an EcoScore based on their sustainable activities and choices.
-- Daily and weekly challenges encourage users to adopt new habits and compete with friends or the community to earn EcoPoints.
+1. **Interfaz Interactiva:**
 
-2. **Personalized Eco-Goals:**
+- El sitio web proporciona una navegación intuitiva y fácil acceso a información sobre los diferentes puntos turísticos de Chupaca.
+- Los usuarios pueden explorar imágenes interactivas de los sitios de interés, como museos, monumentos históricos y eventos culturales.
 
-- Users can set and track personalized eco-goals, such as reducing plastic usage, conserving water, or choosing eco-friendly transportation.
-- The app provides tips and suggestions to help users achieve their goals.
+2. **Galería de Imágenes:**
 
-3. **Green Rewards Marketplace:**
+- Los usuarios tienen acceso a una galería de imágenes y videos que muestran los atractivos turísticos de la región, lo que les permite explorar visualmente los lugares antes de visitarlos.
 
-- EcoPoints earned through challenges and sustainable actions can be redeemed in a virtual Green Rewards Marketplace.
-- The marketplace offers discounts on eco-friendly products, services, and even contributions to environmental causes.
+3. **Recursos Culturales:**
 
-4. **Community Hub:**
+- El sitio incluye información sobre las tradiciones, festividades y gastronomía local de Chupaca, contribuyendo a la preservación y promoción de la cultura de la provincia.
 
-- A community feature allows users to connect, share their eco-friendly achievements, and inspire others.
-- Users can join local eco-groups, organize clean-up events, and collaborate on sustainability projects.
+4. **Mapa Interactivo:**
 
-5. **EcoEducator AI Assistant:**
+- Un mapa interactivo permite a los usuarios localizar los puntos turísticos más relevantes de Chupaca, ayudándoles a planificar su visita de manera eficiente.
 
-- An AI-powered assistant, EcoEducator, provides personalized eco-tips, facts, and information based on users' preferences and habits.
-- Users can chat with EcoEducator for instant advice on sustainable living.
+5. **Testimonios de Visitantes:**
 
-## Technology Stack
+- El sitio también presenta testimonios de visitantes anteriores, quienes comparten sus experiencias y recomendaciones sobre los lugares a visitar.
 
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
+## Tecnología Utilizada
 
-## Outcome
+- **Frontend:** React.js para crear una interfaz interactiva y dinámica.
+- **Backend:** Node.js para gestionar contenidos dinámicos y la autenticación de usuarios.
+- **Mapa interactivo:** Integración de Google Maps API para mostrar la ubicación de los sitios turísticos.
+- **Base de Datos:** MongoDB para almacenar la información relacionada con los puntos turísticos, eventos y medios visuales.
 
-EcoBuddy has successfully created a community of environmentally conscious individuals who actively participate in sustainable living practices. The app not only educates and motivates users but also provides tangible rewards for their commitment to a greener lifestyle, fostering a positive impact on the environment.
+## Resultado
 
-## Client Testimonial
+Este sitio web ha sido un éxito rotundo, permitiendo que tanto la población local como los turistas conozcan más sobre la provincia de Chupaca. La interfaz fácil de usar, el contenido interactivo y el enfoque en el patrimonio cultural han creado una plataforma educativa y atractiva que promueve el turismo en la región.
 
-> We couldn't be happier with the results delivered by Ethan Donovan. From the initial concept discussions to the final product, their responsiveness and collaborative approach were impressive. Our startup's website now stands out, thanks to their creative input and commitment to excellence.
+## Testimonio del Cliente
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+> "El trabajo realizado por Manuel Yanceyan Quincho Ayala y su equipo ha sido excepcional. El sitio web ha superado nuestras expectativas y ha contribuido enormemente a la promoción de Chupaca como un destino turístico cultural. Agradecemos el esfuerzo y la dedicación del equipo." - Arturo Solís Flores
+

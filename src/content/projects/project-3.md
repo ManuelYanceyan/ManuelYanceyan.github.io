@@ -1,64 +1,51 @@
 ---
-title: 'RoboChef - AI Powered Cooking Guide'
-description: RoboChef Recipe Assistant is a groundbreaking mobile application that leverages artificial intelligence to redefine the cooking experience.
-publishDate: 'Oct 12 2023'
-isFeatured: true
+title: 'Aplicativo Móvil para Preparación de Examen de Admisión'
+description: 'Este proyecto consiste en el desarrollo de una aplicación móvil para ayudar a los estudiantes a prepararse para su examen de admisión. El objetivo es ofrecer una plataforma accesible para aquellos que no pueden costear la matrícula en una academia de renombre, permitiéndoles estudiar de manera efectiva y asequible para ingresar a universidades de alto nivel.'
+publishDate: 'Oct 08 2025'
 seo:
   image:
-    src: '/project-3.jpg'
+    src: '/app-admision.jpg'
+    alt: 'Aplicativo móvil para preparación examen de admisión'
 ---
 
-![Project preview](/project-3.jpg)
+![Aplicativo Examen de Admisión](/app-admision.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Descripción del Proyecto:**
 
-**Project Overview:**
-RoboChef Recipe Assistant is a groundbreaking mobile application that leverages artificial intelligence to redefine the cooking experience. By combining machine learning with culinary expertise, RoboChef empowers users to explore a world of flavors, improve their cooking skills, and enjoy personalized recipe recommendations.
+Este proyecto tiene como objetivo la creación de una aplicación móvil accesible para estudiantes que desean rendir su examen de admisión a universidades de alto renombre, pero que no tienen los recursos para pagar la matrícula de una academia o institución prestigiosa. La aplicación proporcionará recursos, herramientas y materiales de estudio de calidad, con el fin de que los estudiantes puedan prepararse de manera efectiva y a su propio ritmo.
 
-## Objectives
+## Objetivos del Proyecto
 
-1. Develop a user-friendly mobile app that utilizes AI to provide personalized recipe suggestions based on user preferences, dietary restrictions, and available ingredients.
-2. Create an interactive cooking guide that assists users with step-by-step instructions, cooking tips, and real-time assistance.
-3. Implement a smart learning system that refines recommendations over time, adapting to users' taste preferences and dietary changes.
+1. **Desarrollar una plataforma de estudio accesible:** Crear una aplicación que ofrezca materiales de estudio gratuitos o a bajo costo para ayudar a los estudiantes a prepararse para los exámenes de admisión.
+2. **Proveer recursos educativos variados:** Incluir prácticas de exámenes, guías de estudio, lecciones interactivas y simulaciones de exámenes para una preparación completa.
+3. **Fomentar el autoaprendizaje:** Permitir que los estudiantes estudien de manera autónoma con herramientas como cronómetros, calendarios de estudio y evaluaciones personalizadas.
 
-## Features
+## Características del Proyecto
 
-1. **AI-Powered Recipe Recommendations:**
+1. **Material de Estudio Interactivo:**
+   - La aplicación proporcionará una variedad de recursos interactivos, como lecciones, guías de estudio y videos explicativos sobre temas clave de los exámenes de admisión.
+   
+2. **Simuladores de Exámenes:**
+   - Incluirá simuladores de exámenes que emulan los formatos y la dificultad de los exámenes reales, permitiendo a los estudiantes practicar y medir su preparación.
 
-- RoboChef analyzes users' taste preferences, dietary restrictions, and ingredient availability to suggest personalized recipes.
-- Machine learning algorithms continuously learn from user interactions, refining recommendations for an increasingly tailored experience.
+3. **Calendario de Estudio Personalizado:**
+   - Los usuarios podrán crear un plan de estudio adaptado a su ritmo y horarios, con alertas y recordatorios para mantenerse enfocados en sus objetivos.
 
-2. **Ingredient Scanner and Inventory Management:**
+4. **Seguimiento de Progreso:**
+   - La aplicación permitirá que los estudiantes realicen un seguimiento de su progreso, identificando las áreas que necesitan mejorar y ofreciendo retroalimentación personalizada.
 
-- Users can scan their pantry and refrigerator using the app's built-in ingredient scanner.
-- RoboChef provides recipe suggestions based on available ingredients and helps users manage their inventory by suggesting recipes that utilize soon-to-expire items.
+## Tecnología Utilizada
 
-3. **Step-by-Step Cooking Guide:**
+- **Frontend:** React Native para crear una aplicación móvil multiplataforma (iOS y Android).
+- **Backend:** Node.js y Express para gestionar contenido educativo y usuarios.
+- **Base de Datos:** MongoDB para almacenar los recursos de estudio, simulaciones y perfiles de usuarios.
+- **Gamificación:** Integración de elementos de gamificación para mantener a los estudiantes motivados, como puntos, logros y rankings.
 
-- Each recipe includes a detailed step-by-step cooking guide with interactive multimedia elements.
-- Users can watch video tutorials, view images, and receive real-time tips from RoboChef as they progress through each cooking stage.
+## Resultado Esperado
 
-4. **Nutritional Insights and Meal Planning:**
+La aplicación permitirá que los estudiantes de todo el país, especialmente aquellos con menos recursos, tengan acceso a una preparación de calidad para sus exámenes de admisión. Se espera que la plataforma incremente las posibilidades de ingreso a universidades prestigiosas, eliminando barreras económicas para la educación superior.
 
-- RoboChef provides nutritional information for each recipe, helping users make informed decisions about their meals.
-- The app offers meal planning features, allowing users to create weekly menus based on dietary goals and preferences.
+## Testimonio del Cliente
 
-5. **Voice-Activated Assistance:**
-
-- Users can interact with RoboChef using voice commands for a hands-free cooking experience.
-- The AI assistant responds to queries, provides cooking tips, and adapts recipes based on user preferences.
-
-## Technology Stack
-
-- Frontend: Flutter for a seamless cross-platform mobile app experience.
-- Backend: Django for handling server-side logic and API integration.
-- Database: PostgreSQL for efficient data storage and retrieval.
-- AI Integration: TensorFlow for machine learning models powering recipe recommendations.
-
-> Ethan Donovan possesses a rare blend of technical expertise and creative flair. They skillfully transformed our vague ideas into a visually stunning and highly functional website. The end result exceeded our expectations, and we continue to receive compliments on the design and user experience.
-
-## Outcome
-
-RoboChef Recipe Assistant has revolutionized the way users approach cooking, making it an enjoyable and educational experience. The AI-powered features not only simplify the cooking process but also contribute to users' culinary growth, creating a personalized and evolving cooking journey.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+> "Este proyecto es una oportunidad única para que los estudiantes con pocos recursos puedan acceder a herramientas de estudio de alta calidad y prepararse para los exámenes de admisión de universidades de alto nivel. Estoy emocionado de que esta plataforma pueda cambiar la vida de muchos jóvenes."  
+> — [Nombre del responsable del proyecto]
