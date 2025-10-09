@@ -32,7 +32,7 @@ export type WeekContent = {
 export type SiteConfig = {
     website: string;
     logo?: Image;
-    title?: string;
+    title: string;  // Aseguramos que el title sea obligatorio
     subtitle?: string;
     description: string;
     image?: Image;
@@ -47,7 +47,8 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://ManuelYanceyan.github.io',
+    title: 'Mi Portafolio de Desarrollo Web',  // Asegúrate de que 'title' esté definido
     description: 'Tema Astro.js y Tailwind CSS para blog y portafolio creado por justgoodui.com',
     image: {
         src: '/dante-preview.jpg',
