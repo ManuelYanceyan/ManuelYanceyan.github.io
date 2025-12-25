@@ -1,5 +1,5 @@
 ---
-title: "Semana 15 - Exposición de Proyecto de Investigación y RSU (no logrado)"
+title: "Semana 15 - Exposición de Proyecto de Investigación y RSU "
 week: 15
 date: "2025-06-07"
 tags: ["Proyecto","Investigación","RSU","Evaluación"]
@@ -7,7 +7,9 @@ tags: ["Proyecto","Investigación","RSU","Evaluación"]
 
 ## Resumen
 
-Por las deficiente del paro docente no se logro completar con este trabajo pero se hizo uso del tiempo para completar trabajo de ia con llama 3 lo cual se realizo pero por motivos de tiempo no se logro revizar 
+Se definio grupos de exposicion de 4 a 5 peronas que a su ves esto en comunicacion efectiva tendrian que presentar sus trabajo de exposición sobre un articulo que se encontrara en  - Artículo base:  
+  [Journal of Systems and Software](https://www.sciencedirect.com/journal/journal-of-systems-and-software)
+ con un tiempo promedio de 15 min por grupo, tambien se planeo el trabajo de ia con llma 3 no logrnadolo por falta de tiempo  
 
 ![Semana 15](/imagenes/semana15.png)
 
