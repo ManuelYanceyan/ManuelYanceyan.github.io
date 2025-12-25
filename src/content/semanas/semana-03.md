@@ -9,7 +9,9 @@ tags: ["CSS","Bootstrap","Tailwind","Frontend"]
 
 Durante la tercera semana se desarrollaron competencias para el diseño y desarrollo de páginas web Front-End utilizando librerías CSS modernas. Se trabajó con Bootstrap y Tailwind CSS como herramientas principales para la construcción de interfaces visuales estructuradas, responsivas y reutilizables. Asimismo, se abordaron conceptos de layout, tipografía, componentes de interfaz y diseño flexible mediante Flexbox, culminando con una práctica calificada orientada al desarrollo de un sitio web con CSS.
 
-![ Semana 03](./imagenes/semana3.png)
+
+![Práctica Calificada - Semana 03](/src/content/semanas/imagenes/semana3.png)
+
 
 ## Clase
 
