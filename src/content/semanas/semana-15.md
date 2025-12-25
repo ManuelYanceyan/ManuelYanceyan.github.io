@@ -8,7 +8,7 @@ tags: ["Proyecto","Investigación","RSU","Evaluación"]
 ## Resumen
 
 Se definio grupos de exposicion de 4 a 5 peronas que a su ves esto en comunicacion efectiva tendrian que presentar sus trabajo de exposición sobre un articulo que se encontrara en  - Artículo base:  
-  [Journal of Systems and Software](https://www.sciencedirect.com/journal/journal-of-systems-and-software)
+  [Software Impacts](https://www.sciencedirect.com/journal/software-impacts)
  con un tiempo promedio de 15 min por grupo, tambien se planeo el trabajo de ia con llma 3 no logrnadolo por falta de tiempo  
 
 ![Semana 15](/imagenes/semana15.png)
