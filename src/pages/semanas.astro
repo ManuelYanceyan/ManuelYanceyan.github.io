@@ -11,9 +11,9 @@ const semanas = await getCollection('semanas');
 const sortedSemanas = semanas.sort((a, b) => a.data.week - b.data.week);
 const semanasData = sortedSemanas.map((semana) => {
   let html = marked.parse(semana.body);
-  // Rewrite local image paths (./imagenes/...) to dev-servable absolute paths so they render while developing
+  // Ensure image paths reference the `public/imagenes` folder so they render both in dev and production
   // Preserve the original quote char around src attribute
-  html = html.replace(/src=(['"])\.\/imagenes\//g, 'src=$1/src/content/semanas/imagenes/');
+  html = html.replace(/src=(['"])\.\/imagenes\//g, 'src=$1/imagenes/');
   const text = html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
   const excerpt = text.slice(0, 160) + (text.length > 160 ? "..." : "");
   return {

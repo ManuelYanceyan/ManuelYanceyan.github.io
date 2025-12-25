@@ -8,8 +8,8 @@ tags: ["Evaluación","Parcial","Retroalimentación"]
 📌 **SEMANA DE EVALUACIÓN PARCIAL**
 
 
-![ Semana 08](./imagenes/semana8.png)
- 
+![Semana 08](/imagenes/semana8.png)
+
  Esta semana estuvo orientada a la revisión del avance académico, evaluación de los aprendizajes logrados y reforzamiento de los contenidos desarrollados durante la primera unidad del curso.
 
 ## Descripción

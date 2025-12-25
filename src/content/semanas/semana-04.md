@@ -9,7 +9,7 @@ tags: ["JavaScript","TypeScript","DOM","Canvas","Frontend"]
 
 Durante la cuarta semana se abordó el desarrollo de páginas web Front-End utilizando JavaScript y TypeScript, enfocándose en dotar de interactividad y dinamismo a las aplicaciones web. Se estudiaron los fundamentos del lenguaje JavaScript, sus tipos de datos, estructuras de control y funciones, así como la manipulación del DOM y la creación de animaciones y gráficos mediante Canvas. Estas competencias permitieron comprender cómo el navegador interpreta y ejecuta código para responder a la interacción del usuario.
 
-![ Semana 04](./imagenes/semana4.png)
+![Semana 04](/imagenes/semana4.png)
 
 ## Clase
 

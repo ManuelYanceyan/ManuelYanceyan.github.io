@@ -9,7 +9,8 @@ tags: ["Backend","Arquitectura Web","PHP","JSP","Server Side"]
 
 Durante la novena semana se introdujo el desarrollo web del lado del servidor, abordando los fundamentos de la tecnología Web Backend. Se estudiaron los conceptos de arquitectura de aplicaciones web, el funcionamiento de los servidores web y el procesamiento de lógica en el server side. Asimismo, se desarrollaron aplicaciones web utilizando tecnologías backend como PHP y JSP, culminando con el despliegue de aplicaciones web en un entorno de servidor.
 
-![ Semana 09](./imagenes/semana9.png)
+![Semana 09](/imagenes/semana9.png)
+
  
 
 ## Clase

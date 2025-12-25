@@ -9,7 +9,8 @@ tags: ["Framework JS","Componentes","Props","Frontend"]
 
 Durante la quinta semana se abordó el desarrollo de aplicaciones Front-End utilizando Frameworks JavaScript modernos. Se estudió la estructura y funcionamiento de estos frameworks bajo el enfoque de Client Side Rendering, así como la gestión de dependencias y el uso de herramientas para la creación de proyectos. Además, se trabajó el desarrollo basado en componentes, el uso de props y children, y distintas formas de aplicar estilos en aplicaciones Front-End.
 
-![ Semana 05](./imagenes/semana5.png)
+![Semana 05](/imagenes/semana5.png)
+
 
 ## Clase
 

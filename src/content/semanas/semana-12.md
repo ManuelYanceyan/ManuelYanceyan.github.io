@@ -9,7 +9,7 @@ tags: ["Django","Forms","Admin","Middleware","Sesiones","Autenticación"]
 
 Durante la semana 12 se desarrollaron funcionalidades clave para aplicaciones web backend con Django, enfocándose en la gestión de formularios, validación y sanitización de datos. Asimismo, se trabajó con Django Admin para la administración y personalización de modelos, incluyendo formularios personalizados y campos calculados. Finalmente, se abordaron conceptos de middleware, manejo de sesiones, autenticación y autorización, culminando con el desarrollo de un sistema web backend como parte del laboratorio.
 
-![Semana 12](./imagenes/semana12.png)
+![Semana 12](/imagenes/semana12.png)
 
 ## Clase
 - **Gestión de formularios en Django.**  

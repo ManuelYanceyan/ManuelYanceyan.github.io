@@ -10,7 +10,8 @@ tags: ["HTML","Introducción","Laboratorio"]
 
 Durante la primera semana se realizó la exposición del sílabo del curso y la aplicación de una prueba de diagnóstico con la finalidad de identificar los conocimientos previos de los estudiantes. Se introdujeron los fundamentos del desarrollo web y el enfoque general del curso, resaltando la importancia del portafolio educativo como evidencia del aprendizaje progresivo.
 
-![Práctica Calificada - Semana 01](./imagenes/semana1.png)
+![Semana 01](/imagenes/semana1.png)
+
 
 ## Clase
 - Exposición del sílabo del curso, objetivos y alcance de la asignatura.  

@@ -9,7 +9,7 @@ tags: ["Django","Backend","MVC","MTV","Modelos","Vistas","Plantillas"]
 
 Durante la semana 11 se introdujo el framework Django para el desarrollo de aplicaciones web backend con Python. Se estudió el patrón de arquitectura MVC y su adaptación en Django mediante el enfoque MTV, así como la instalación y gestión de proyectos. Además, se trabajó la configuración de URLs, el desarrollo de vistas y el uso de plantillas. Finalmente, se abordó el modelo de datos mediante la definición de modelos y consultas a base de datos, culminando con un laboratorio orientado a integrar vistas, plantillas y modelos en una aplicación funcional.
 
-![ Semana 11](./imagenes/semana11.png)
+![Semana 11](/imagenes/semana11.png)
 
 ## Clase
 - **Introducción a Django y su propósito.**  

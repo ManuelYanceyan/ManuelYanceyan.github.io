@@ -9,7 +9,8 @@ tags: ["Proyecto","Investigación","RSU","Evaluación"]
 
 Por las deficiente del paro docente no se logro completar con este trabajo pero se hizo uso del tiempo para completar trabajo de ia con llama 3 lo cual se realizo pero por motivos de tiempo no se logro revizar 
 
-![Semana 15](./imagenes/semana15.png)
+![Semana 15](/imagenes/semana15.png)
+
 
 ## Actividades realizadas
 - Exposición del proyecto de investigación.

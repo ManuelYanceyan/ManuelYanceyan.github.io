@@ -10,7 +10,7 @@ tags: ["Microservicios","Django","Docker","Kubernetes","Backend"]
 Durante la semana 14 se introdujo el enfoque de arquitectura basada en microservicios para el desarrollo de aplicaciones web backend. Se estudiaron los conceptos fundamentales de los microservicios, su diseño y construcción utilizando Django, así como los mecanismos de comunicación entre servicios. Además, se abordó la gestión de bases de datos en arquitecturas distribuidas, la implementación de microservicios con Docker y Kubernetes, y aspectos clave como la seguridad, el monitoreo, el escalado y el consumo de microservicios desde aplicaciones cliente.
 
 
-![Semana 114](./imagenes/semana14.png)
+![Semana 14](/imagenes/semana14.png)
 
 ## Clase
 - **Introducción a los microservicios.**  

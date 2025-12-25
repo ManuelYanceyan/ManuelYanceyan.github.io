@@ -9,7 +9,8 @@ tags: ["Framework JS","Eventos","APIs","Async","Axios"]
 
 Durante la sexta semana se desarrollaron aplicaciones Front-End utilizando Frameworks JavaScript, enfocándose en el manejo de eventos, estructuras condicionales y bucles. Se abordaron técnicas de renderizado condicional e iterativo, el manejo de formularios y routing, así como el consumo de APIs externas mediante promesas, async/await y la librería Axios. Estos conocimientos permitieron crear aplicaciones dinámicas que interactúan con fuentes de datos externas.
 
-![ Semana 06](./imagenes/semana6.png)
+![Semana 06](/imagenes/semana6.png)
+
 
 ## Clase
 

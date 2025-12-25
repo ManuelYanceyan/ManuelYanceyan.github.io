@@ -9,7 +9,8 @@ tags: ["Python","Backend","POO","Programación"]
 
 Durante la décima semana se introdujo el lenguaje de programación Python como herramienta fundamental para el desarrollo de aplicaciones backend. Se estudiaron los conceptos básicos del lenguaje, su sintaxis, tipos de datos y estructuras de control. Asimismo, se abordaron principios de programación orientada a objetos, manejo de excepciones y modularización del código, permitiendo desarrollar aplicaciones estructuradas y mantenibles.
 
-![ Semana 10](./imagenes/semana10.png)
+![Semana 10](/imagenes/semana10.png)
+
 
 ## Clase
 

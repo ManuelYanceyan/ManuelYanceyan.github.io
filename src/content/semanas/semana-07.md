@@ -9,7 +9,8 @@ tags: ["Hooks","Framework JS","useState","useEffect","Frontend"]
 
 Durante la séptima semana se profundizó en el uso de Hooks dentro de Frameworks JavaScript para la gestión del estado, efectos secundarios y reutilización de lógica en aplicaciones Front-End. Se estudiaron los principales Hooks proporcionados por el framework, la creación de Hooks personalizados y se desarrolló una evaluación de logro para medir el dominio de los conceptos aprendidos.
 
-![ Semana 07](./imagenes/semana7.png)
+![Semana 07](/imagenes/semana7.png)
+
 
 ## Clase
 

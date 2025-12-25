@@ -9,7 +9,8 @@ tags: ["HTML Avanzado","Semántica","Accesibilidad"]
 
 Durante la segunda semana se desarrollaron los fundamentos prácticos para la construcción de páginas web utilizando Lenguaje de Marcado de Hipertexto (HTML) y Lenguaje Marcado Extensible (XML). Asimismo, se abordó el diseño visual de las páginas web mediante Hojas de Estilo en Cascada (CSS3), enfatizando la correcta estructuración del contenido, el diseño responsivo y la compatibilidad entre navegadores.
 
-![Práctica Calificada - Semana 02](./imagenes/semana2.png)
+![Semana 02](/imagenes/semana2.png)
+
 
 ## Clase
 

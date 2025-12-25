@@ -9,7 +9,7 @@ tags: ["Evaluación","Consolidación","Portafolio","Cierre"]
 
 Esta semana estuvo orientada a la **evaluación final del curso** y a la **revisión integral del portafolio educativo**, consolidando los aprendizajes desarrollados a lo largo de las 16 semanas.
 
-![ Semana 16](./imagenes/semana16.png)
+![ Semana 16](/imagenes/semana16.png)
 
 ## Descripción
 

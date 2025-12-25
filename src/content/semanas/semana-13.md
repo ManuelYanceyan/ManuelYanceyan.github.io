@@ -8,7 +8,7 @@ tags: ["API","REST","HATEOAS","Serialización","Django","Backend"]
 ## Resumen
 
 Durante la semana 13 se abordó el diseño y construcción de APIs RESTful para aplicaciones web backend. Se estudiaron los principios de REST, el concepto de APIs de hipermedios y HATEOAS, así como la serialización de modelos y otras fuentes de datos. Además, se trabajaron mecanismos de filtrado, paginación y límites temporales de uso para asegurar escalabilidad y control de consumo. Finalmente, se revisaron ruteadores, conjuntos de vistas e integración con AJAX, incluyendo consideraciones de seguridad como CSRF y CORS, culminando con el desarrollo de un sistema web backend basado en APIs.
-![Semana 13](./imagenes/semana13.png)
+![Semana 13](/imagenes/semana13.png)
 
 ## Clase
 - **Introducción a REST y APIs RESTful.**  
