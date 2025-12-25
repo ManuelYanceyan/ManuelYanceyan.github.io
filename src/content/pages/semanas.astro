@@ -1,5 +1,5 @@
 ---
-import Accordion from "../components/Accordion";
+import SemanaList from "../components/SemanaList";
 import { getCollection } from "astro:content";
 import { marked } from "marked"; // Para convertir markdown en HTML
 
@@ -9,16 +9,26 @@ const semanas = await getCollection("semanas");
 // Ordenamos por número de semana
 const sortedSemanas = semanas.sort((a, b) => a.data.week - b.data.week);
 
-// Preparamos items para el acordeón
-const items = sortedSemanas.map((semana) => ({
-  title: semana.data.title,
-  content: marked.parse(semana.body), // Convertimos markdown a HTML
-}));
+// Preparamos datos para el componente
+const semanasData = sortedSemanas.map((semana) => {
+  const html = marked.parse(semana.body);
+  const text = html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const excerpt = text.slice(0, 160) + (text.length > 160 ? "..." : "");
+  return {
+    week: semana.data.week,
+    title: semana.data.title,
+    content: html, // Convertimos markdown a HTML
+    raw: semana.body,
+    excerpt,
+    date: semana.data.date,
+    tags: semana.data.tags ?? [],
+  };
+});
 ---
 
 <div class="py-10">
   <h1 class="text-3xl font-bold mb-6 text-center">
     Reporte de Aprendizaje por Semanas
   </h1>
-  <Accordion items={items} />
+  <SemanaList semanas={semanasData} />
 </div>

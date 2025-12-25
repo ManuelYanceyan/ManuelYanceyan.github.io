@@ -22,6 +22,15 @@
     --bg-main: #f2f1ec;
     --bg-muted: #eae9e1;
     --border-main: #171717;
+
+    /* Neón centralizado */
+    --neon-cyan: #00ffff;
+    --neon-accent: #00ff99;
+    --neon-pink: #ff00ff;
+    --neon-rose: #ff0099;
+    --neon-text: #7ef0ff;
+    --neon-btn-from: rgba(14,165,233,1);
+    --neon-btn-to: rgba(0,255,150,1);
 }
 
 html.dark {
@@ -116,3 +125,307 @@ html.dark {
     font-size: 1.125rem;
     color: var(--text-main);
 }
+
+/* === ESTILOS DE 'CUADERNO' (Notebook) === */
+/* === CUADERNO OSCURO (estado base) === */
+.notebook-paper {
+    background-color: #0a0d14;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.04) 0px,
+        rgba(255,255,255,0.04) 1px,
+        transparent 1px,
+        transparent 28px
+    );
+    border-left: 6px solid #1f2937;
+}
+
+.notebook-paper button[aria-current="true"] {
+    outline: 2px solid rgba(59,130,246,0.12);
+}
+
+/* === HOJA NORMAL (no activa) === */
+.notebook-page {
+    background-color: #020617;
+    color: #e5e7eb;
+    border: 1px solid rgba(56,189,248,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    position: relative;
+    font-family: var(--font-serif, 'Georgia', 'Times New Roman', serif);
+    line-height: 1.8;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenido interno: limitar altura y permitir scroll cuando sea necesario */
+.notebook-content {
+    /* fill available space inside the page and allow proper scrolling */
+    flex: 1 1 auto;
+    min-height: 0; /* allow flex child to shrink so overflow works */
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+    padding-right: 0.5rem; /* espacio para scrollbar */
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto; /* allow pointer events for scrolling */
+    touch-action: auto;
+}
+
+/* Scrollbar styling */
+.notebook-content::-webkit-scrollbar {
+  width: 8px;
+}
+.notebook-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notebook-content::-webkit-scrollbar-thumb {
+  background: rgba(56,189,248,0.22);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+/* Firefox */
+.notebook-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56,189,248,0.22) transparent;
+}
+
+/* === Scrollbar styling for the left sidebar (notebook-index) === */
+.notebook-index::-webkit-scrollbar {
+  width: 10px;
+}
+.notebook-index::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.03);
+  border-radius: 9999px;
+  margin: 6px 0;
+}
+.notebook-index::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-pink, #ff2d95), var(--neon-cyan, #38bdf8));
+  border-radius: 9999px;
+  box-shadow: 0 0 14px rgba(56,189,248,0.12);
+  border: 2px solid rgba(2,6,23,0.55);
+}
+.notebook-index::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 20px rgba(56,189,248,0.18);
+}
+
+/* Firefox */
+.notebook-index {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-pink, #ff2d95) transparent;
+}
+
+/* línea del margen (margen de cuaderno) */
+.notebook-page::before {
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(200, 0, 0, 0.06);
+}
+
+/* === HOJA ACTIVA (AZUL al hacer clic) === */
+.notebook-page-active {
+    background: linear-gradient(
+        180deg,
+        #020617 0%,
+        #020617 30%,
+        #031b34 100%
+    );
+    border: 1px solid rgba(56,189,248,0.65);
+    box-shadow:
+        0 0 0 1px rgba(56,189,248,0.35),
+        0 0 25px rgba(56,189,248,0.25),
+        0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* Animaciones realistas de pasar página */
+@keyframes page-left {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-8deg); }
+}
+@keyframes page-right {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(8deg); }
+}
+.animate-page-left {
+  animation: page-left 0.4s ease-in-out;
+  transform-origin: left center;
+}
+.animate-page-right {
+  animation: page-right 0.4s ease-in-out;
+  transform-origin: right center;
+}
+
+/* === PAGE-FLIP 3D (double-page) === */
+.book {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  perspective: 2200px;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-front {
+  z-index: 3;
+  transform-origin: left center;
+}
+
+.page-back {
+  z-index: 2;
+  transform: rotateY(180deg);
+  transform-origin: left center;
+}
+
+/* Flip to the left (next) */
+.flip-front-left {
+  animation: flipFrontLeft 900ms ease-in-out forwards;
+}
+.flip-back-left {
+  animation: flipBackLeft 900ms ease-in-out forwards;
+}
+
+@keyframes flipFrontLeft {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(-180deg); }
+}
+@keyframes flipBackLeft {
+  0% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+/* Flip to the right (previous) */
+.flip-front-right {
+  animation: flipFrontRight 900ms ease-in-out forwards;
+}
+.flip-back-right {
+  animation: flipBackRight 900ms ease-in-out forwards;
+}
+
+@keyframes flipFrontRight {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+@keyframes flipBackRight {
+  0% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Small visual smoothing while flipping */
+.page-front.flip-front-left,
+.page-front.flip-front-right {
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+}
+.page-back.flip-back-left,
+.page-back.flip-back-right {
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.4);
+}
+
+/* Estilo de índice (aside) */
+.notebook-index {
+  background: #0b0f14; /* keep it darker to match theme */
+  border-right: 1px solid rgba(255,255,255,0.02);
+  padding: 1rem;
+  font-family: var(--font-serif, 'Georgia', 'Times New Roman', serif);
+}
+.notebook-index button {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px dashed rgba(255,255,255,0.03);
+  background: transparent;
+  color: rgba(229,231,235,0.9);
+}
+.notebook-index button:hover {
+  background: rgba(255,255,255,0.02);
+}
+.notebook-index button[aria-current="true"] {
+  background: rgba(56,189,248,0.06);
+  font-weight: 600;
+  color: #7dd3fc;
+}
+
+/* TIPOGRAFÍA y CONTRASTE fino */
+.prose {
+  color: var(--prose-color, #e5e7eb);
+}
+.prose h2 {
+  color: #7dd3fc;
+  border-left: 4px solid rgba(56,189,248,0.6);
+  padding-left: 12px;
+}
+
+
+/* Pequeños ajustes de accesibilidad y foco */
+button:focus {
+    outline: 2px solid rgba(59,130,246,0.35);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .notebook-paper {
+        display: block;
+        border-left: 4px solid #d9d7cb;
+    }
+
+
+}
+
+/* Animaciones de paso de página */
+@keyframes slideLeft {
+    from { transform: translateX(20%); opacity: 0; }
+    to { transform: translateX(0%); opacity: 1; }
+}
+@keyframes slideRight {
+    from { transform: translateX(-20%); opacity: 0; }
+    to { transform: translateX(0%); opacity: 1; }
+}
+.animate-slide-left {
+    animation: slideLeft 260ms ease-out;
+}
+.animate-slide-right {
+    animation: slideRight 260ms ease-out;
+}
+
+/* Neón adicional */
+.bg-neon {
+    background-color: #04050a;
+    box-shadow: 0 0 24px rgba(14, 165, 233, 0.12) inset, 0 0 18px rgba(255,0,255,0.04);
+    border: 1px solid rgba(14,165,233,0.2);
+}
+.text-neon {
+    color: var(--neon-text, #7ef0ff);
+    text-shadow: 0 0 8px var(--neon-cyan, rgba(14,165,233,0.5)), 0 0 20px rgba(0,255,200,0.08);
+}
+/* Neon pink utility for project accents */
+.text-neon-pink {
+    color: var(--neon-pink, #ff00ff);
+    text-shadow: 0 0 8px rgba(255,0,255,0.45), 0 0 18px rgba(255,0,150,0.08);
+}
+.btn-neon {
+    background: linear-gradient(90deg, var(--neon-btn-from, rgba(14,165,233,1)), var(--neon-btn-to, rgba(0,255,150,1)));
+    color: #001219;
+    box-shadow: 0 6px 24px rgba(14,165,233,0.12), 0 0 6px rgba(0,255,150,0.06) inset;
+}
+.btn-outline-neon {
+    border: 1px solid rgba(14,165,233,0.6);
+    color: #7ef0ff;
+    background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(4,8,30,0.6));
+    box-shadow: 0 0 12px rgba(14,165,233,0.08) inset;
+}
+

@@ -6,8 +6,8 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
-export type Props = HeadProps & { showHeader?: boolean };
-const { showHeader = true, ...head } = Astro.props;
+export type Props = HeadProps & { showHeader?: boolean; wideContent?: boolean };
+const { showHeader = true, wideContent = false, ...head } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +28,7 @@ const { showHeader = true, ...head } = Astro.props;
     <style>
       body {
         background: radial-gradient(circle at center, #050505 0%, #000010 100%);
-        color: #e0e0ff;
+        color: var(--neon-text, #e0e0ff);
         font-family: 'Orbitron', sans-serif;
         min-height: 100vh;
         overflow-x: hidden;
@@ -44,30 +44,30 @@ const { showHeader = true, ...head } = Astro.props;
         border-radius: 12px;
         pointer-events: none;
         z-index: 50;
-        box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+        box-shadow: 0 0 10px var(--neon-cyan, #00ffff), inset 0 0 10px var(--neon-cyan, #00ffff);
         animation: neonFlow 6s linear infinite;
       }
 
       @keyframes neonFlow {
         0% {
-          box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
-          border: 2px solid #00ffff;
+          box-shadow: 0 0 10px var(--neon-cyan, #00ffff), inset 0 0 10px var(--neon-cyan, #00ffff);
+          border: 2px solid var(--neon-cyan, #00ffff);
         }
         25% {
-          box-shadow: 0 0 20px #00ff99, inset 0 0 20px #00ff99;
-          border: 2px solid #00ff99;
+          box-shadow: 0 0 20px var(--neon-accent, #00ff99), inset 0 0 20px var(--neon-accent, #00ff99);
+          border: 2px solid var(--neon-accent, #00ff99);
         }
         50% {
-          box-shadow: 0 0 20px #ff00ff, inset 0 0 20px #ff00ff;
-          border: 2px solid #ff00ff;
+          box-shadow: 0 0 20px var(--neon-pink, #ff00ff), inset 0 0 20px var(--neon-pink, #ff00ff);
+          border: 2px solid var(--neon-pink, #ff00ff);
         }
         75% {
-          box-shadow: 0 0 20px #ff0099, inset 0 0 20px #ff0099;
-          border: 2px solid #ff0099;
+          box-shadow: 0 0 20px var(--neon-rose, #ff0099), inset 0 0 20px var(--neon-rose, #ff0099);
+          border: 2px solid var(--neon-rose, #ff0099);
         }
         100% {
-          box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
-          border: 2px solid #00ffff;
+          box-shadow: 0 0 10px var(--neon-cyan, #00ffff), inset 0 0 10px var(--neon-cyan, #00ffff);
+          border: 2px solid var(--neon-cyan, #00ffff);
         }
       }
     </style>
@@ -79,7 +79,7 @@ const { showHeader = true, ...head } = Astro.props;
     <div class="flex flex-col min-h-screen px-4 md:px-8 relative z-10">
       <Nav />
       {showHeader && <Header />}
-      <main class="grow w-full max-w-3xl mx-auto">
+      <main class={`grow w-full ${wideContent ? 'w-[90vw] max-w-none' : 'max-w-3xl'} mx-auto`}>
         <slot />
       </main>
       <Footer />
